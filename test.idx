@@ -1,0 +1,20 @@
+.ds toc.0.name First heading
+.nr toc.0.num 2
+.nr toc.total 1
+.nr toc.init 1
+.ds toc.1.name Second heading
+.nr toc.1.num 2
+.nr toc.total 2
+.nr toc.init 1
+.ds toc.2.name 3rd heading
+.nr toc.2.num 2
+.nr toc.total 3
+.nr toc.init 1
+.ds toc.3.name 4th heading
+.nr toc.3.num 3
+.nr toc.total 4
+.nr toc.init 1
+.ds toc.4.name This is once again a heading
+.nr toc.4.num 4
+.nr toc.total 5
+.nr toc.init 1
