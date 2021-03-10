@@ -1,0 +1,18 @@
+TOC EXAMPLE FOR NEATROFF
+====================
+
+A simple example of how you can create a table of contents in Neatroff and with
+a little tweaking any troff. To use this package, Neatroff has to be set up
+first:
+
+$ git clone git://github.com/litcave/neatroff_make.git
+$ cd neatroff_make/
+$ make init
+$ make neat
+
+The following commands obtain and initialize the toc
+package in neatroff_make/toc:
+
+$ git clone git://github.com/Gavinok/neatroff_toc.git toc
+$ cd toc
+$ make
