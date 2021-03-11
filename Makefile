@@ -8,7 +8,6 @@ REFR = "$(BASE)/neatrefer/refer"
 PIC = "$(BASE)/troff/pic/pic"
 TBL = "$(BASE)/troff/tbl/tbl"
 SOIN = "$(BASE)/soin/soin"
-GRAP = grap
 
 ROFFOPTS = "-F$(BASE)" "-M$(BASE)/tmac"
 POSTOPTS = "-F$(BASE)" -pletter
@@ -23,7 +22,7 @@ finalpdf: test.idx test.pdf
 
 .tr.ps:
 	@echo "Generating $@"
-	@cat $< | $(GRAP) |$(PIC) | $(TBL) | $(EQN) | $(ROFF) $(ROFFOPTS) | $(POST) $(POSTOPTS) >$@
+	@cat $< | $(PIC) | $(TBL) | $(EQN) | $(ROFF) $(ROFFOPTS) | $(POST) $(POSTOPTS) >$@
 
 .ms.preidx: ## First pass of the file
 	@echo "Generating $@"
