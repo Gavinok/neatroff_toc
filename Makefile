@@ -25,23 +25,23 @@ finalpdf: test.idx test.pdf
 	@echo "Generating $@"
 	@cat $< | $(GRAP) |$(PIC) | $(TBL) | $(EQN) | $(ROFF) $(ROFFOPTS) | $(POST) $(POSTOPTS) >$@
 
-.ms.preidx:
+.ms.preidx: ## First pass of the file
 	@echo "Generating $@"
 	@cat $< | $(SOIN) | \
 		$(REFR) $(REFROPTS) | $(PIC) | $(TBL) | $(EQN) | \
 		$(ROFF) $(ROFFOPTS) $(ROFFMACS) 2>$@ | $(POST) $(POSTOPTS)  >/dev/null
 
-.preidx.idx:
+.preidx.idx: ## Generate index file
 	@echo "Generating $@"
 	cat $< | grep '^INDEX' | sed 's/^INDEX//' >$@
 
-.ms.ps:
+.ms.ps: ## Generate postscript file
 	@echo "Generating $@"
 	@cat $< | $(SOIN) | \
 		$(REFR) $(REFROPTS) | $(PIC) | $(TBL) | $(EQN) | \
 		$(ROFF) $(ROFFOPTS) $(ROFFMACS) | $(POST) $(POSTOPTS) >$@
 
-.ps.pdf:
+.ps.pdf: ## Generate pdf
 	@echo "Generating $@"
 	@ps2pdf -dPDFSETTINGS=/prepress -dEmbedAllFonts=true \
 		"-sFONTPATH=$(BASE)/fonts/" "-sFONTMAP=$(BASE)/fonts/Fontmap" $< $@

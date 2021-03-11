@@ -1,4 +1,6 @@
+.\" macros used for building the toc
 .so tmac.toc
+.\" This is an index that is generated on the first pass of this file
 .so test.idx
 .toc
 .bp
