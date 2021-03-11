@@ -1,5 +1,3 @@
-.fp - R HR
-.fp - HD HB
 .so tmac.toc
 .so test.idx
 .toc
