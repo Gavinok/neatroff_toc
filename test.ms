@@ -4,16 +4,11 @@
 .so test.idx
 .toc
 .bp
+.\" Change headings to work with toc
 .rn SH SH_
 .de SH
 .	SH_ "\\$*"
-.	post.mark "\\$*"
-.	post.name "toc.\\n[toc.idx]"
-.	tm INDEX.ds toc.\\n[toc.idx].name \\$*
-.	tm INDEX.nr toc.\\n[toc.idx].num \\n[.%]
-.	nr toc.idx +1
-.	tm INDEX.nr toc.total \\n[toc.idx]
-.	tm INDEX.nr toc.init 1
+.	toc.mark "\\$*"
 ..
 .
 .TL
