@@ -16,9 +16,8 @@ REFROPTS = -m -e -o ct -p ref.bib
 
 TARGET = toc
 
-all: $(TARGET).pdf
-
 .SUFFIXES: .tr .preidx .idx .ms .ps .pdf
+all: $(TARGET).pdf
 
 $(TARGET).pdf: $(TARGET).ms $(TARGET).idx
 
