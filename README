@@ -16,3 +16,6 @@ package in neatroff_make/toc:
 $ git clone git://github.com/Gavinok/neatroff_toc.git toc
 $ cd toc
 $ make
+
+For an example of how this will look
+https://www.engr.uvic.ca/~gavinfre/toc.pdf
