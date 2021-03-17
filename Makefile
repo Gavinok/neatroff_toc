@@ -14,15 +14,13 @@ POSTOPTS = "-F$(BASE)" -pletter
 ROFFMACS = -mpost -men
 REFROPTS = -m -e -o ct -p ref.bib
 
-all: finalpdf
+TARGET = toc
+
+all: $(TARGET).pdf
 
 .SUFFIXES: .tr .preidx .idx .ms .ps .pdf
 
-finalpdf: test.idx test.pdf 
-
-.tr.ps:
-	@echo "Generating $@"
-	@cat $< | $(PIC) | $(TBL) | $(EQN) | $(ROFF) $(ROFFOPTS) | $(POST) $(POSTOPTS) >$@
+$(TARGET).pdf: $(TARGET).ms $(TARGET).idx
 
 .ms.preidx: ## First pass of the file
 	@echo "Generating $@"
@@ -44,6 +42,10 @@ finalpdf: test.idx test.pdf
 	@echo "Generating $@"
 	@ps2pdf -dPDFSETTINGS=/prepress -dEmbedAllFonts=true \
 		"-sFONTPATH=$(BASE)/fonts/" "-sFONTMAP=$(BASE)/fonts/Fontmap" $< $@
+
+.PHONY: deploy
+deploy: $(TARGET).pdf ## For deploying the pdf to server
+	./deploy $< 
 
 clean:
 	rm -f *.ps  *.pdf *.preidx *.idx
